@@ -10,11 +10,11 @@
 
 > File uploaded successfully: 70785cb6331f905953f1d57cc1d27a6c
 
-Вводим его в поле на главной странице и нажимаем **Download**. Сервис делает `POST` запрос на `/download` с полем `file`, в котором введенный наш хэш, и выдаёт нам кракозябры, т.к. в заголовках почему-то `Content-Type: text/html`.
+Вводим его в поле на главной странице и нажимаем **Download**. Сервис делает `POST` запрос на `/download` с полем `file`, в котором наш введенный хэш, и выдаёт нам кракозябры, т.к. в заголовках почему-то `Content-Type: text/html`.
 
 Пробуем LFI (Local File Inclusion). В поле `file` отправляем `../index.php`. В ответе видим небольшой кусочек PHP кода:
 
-```markdown
+```php
 <?php
 declare(strict_types=1);
 ?>
